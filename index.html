@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetic Node — Tech & Digital Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --surface-color: #141414;
+            --border-color: #262626;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --accent: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        /* Abstract minimalist SVG node representation matching your branding */
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            font-size: 1.1rem;
+        }
+
+        .nav-contact {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-contact:hover {
+            color: var(--text-primary);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 7rem 0 5rem 0;
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            background: var(--surface-color);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent);
+            color: var(--bg-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+        }
+
+        .cta-button:hover {
+            opacity: 0.9;
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: border-color 0.2s ease;
+        }
+
+        .service-card:hover {
+            border-color: #404040;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-content p {
+            color: var(--text-secondary);
+        }
+
+        .email-link {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--text-primary);
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
+        }
+
+        .email-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0 3rem 0;
+            }
+            .contact {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo-container">
+            <!-- Embedded Minimalist Logo Icon -->
+            <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="56" cy="44" r="16" fill="white"/>
+                <path d="M25 65L45 45" stroke="white" stroke-width="10" stroke-linecap="round"/>
+                <path d="M52 25L77 50L52 75" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text">KINETIC NODE</span>
+        </a>
+        <a href="mailto:hello@kineticnode.co.uk" class="nav-contact">hello@kineticnode.co.uk</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="badge">Tech & Digital Agency</span>
+            <h1>High-performance web engineering for modern businesses.</h1>
+            <p>We build, optimize, and scale fast custom websites and digital systems. No bloat, no page builders—just clean, reliable code.</p>
+            <a href="mailto:hello@kineticnode.co.uk" class="cta-button">Start a Project</a>
+        </section>
+
+        <section class="services">
+            <div class="section-title">Core Capabilities</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Web Build</h3>
+                    <p>Hand-crafted, lightning-fast websites engineered from scratch. Fully responsive, lightweight, and structured to convert visitors into clients.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Performance & Speed</h3>
+                    <p>Auditing and optimizing existing web infrastructure to eliminate bottlenecks, boost loading speeds, and improve search engine positioning.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Systems & Tech Support</h3>
+                    <p>Reliable technical maintenance, workflow integrations, and ongoing support to keep your digital operations running seamlessly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="contact-content">
+                <h2>Let's build something exceptional.</h2>
+                <p>Ready to upgrade your online presence? Get in touch with our team directly.</p>
+            </div>
+            <a href="mailto:hello@kineticnode.co.uk" class="email-link">hello@kineticnode.co.uk</a>
+        </section>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 Kinetic Node. All rights reserved.</div>
+        <div>UK-Based Tech & Digital Partners</div>
+    </footer>
+
+</body>
+</html>
